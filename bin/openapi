@@ -1,0 +1,5 @@
+#! /usr/bin/env ruby
+
+require_relative '../lib/driver'
+
+Driver.run!(ARGV.first || 'openapi.rb')

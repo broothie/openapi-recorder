@@ -1,0 +1,123 @@
+---
+openapi: 3.0.3
+info:
+  title: Open API Spec
+  description: DSL for generating Open API Spec files against a working API
+  version: 0.0.0
+servers:
+- description: httpbin.org
+  url: https://httpbin.org
+paths:
+  "/get":
+    get:
+      description: get some data (this endpoint returns the query params)
+      parameters:
+      - name: username
+        in: query
+        example: katrina
+      responses:
+        '200':
+          description: get some data (this endpoint returns the query params)
+          content:
+            application/json:
+              example:
+                args:
+                  username: katrina
+                headers:
+                  Accept: "*/*"
+                  Accept-Encoding: gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+                  Host: httpbin.org
+                  User-Agent: Faraday v1.0.1
+                  X-Amzn-Trace-Id: Root=1-5ee6e58a-30a47a67204f39c3abd1c8e7
+                origin: 73.162.143.119
+                url: https://httpbin.org/get?username=katrina
+              schema:
+                type: object
+                properties:
+                  args:
+                    type: object
+                    properties:
+                      username:
+                        type: string
+                  headers:
+                    type: object
+                    properties:
+                      Accept:
+                        type: string
+                      Accept-Encoding:
+                        type: string
+                      Host:
+                        type: string
+                      User-Agent:
+                        type: string
+                      X-Amzn-Trace-Id:
+                        type: string
+                  origin:
+                    type: string
+                  url:
+                    type: string
+  "/json":
+    get:
+      description: get some json data
+      responses:
+        '200':
+          description: get some json data
+          content:
+            application/json:
+              example:
+                slideshow:
+                  author: Yours Truly
+                  date: date of publication
+                  slides:
+                  - title: Wake up to WonderWidgets!
+                    type: all
+                  - items:
+                    - Why <em>WonderWidgets</em> are great
+                    - Who <em>buys</em> WonderWidgets
+                    title: Overview
+                    type: all
+                  title: Sample Slide Show
+              schema:
+                type: object
+                properties:
+                  slideshow:
+                    type: object
+                    properties:
+                      author:
+                        type: string
+                      date:
+                        type: string
+                      slides:
+                        type: array
+                        items:
+                        - type: object
+                          properties:
+                            title:
+                              type: string
+                            type:
+                              type: string
+                        - type: object
+                          properties:
+                            items:
+                              type: array
+                              items:
+                              - type: string
+                              - type: string
+                            title:
+                              type: string
+                            type:
+                              type: string
+                      title:
+                        type: string
+  "/xml":
+    get:
+      description: get some xml data
+      responses:
+        '200':
+          description: get some xml data
+          content:
+            application/xml:
+              example: {}
+              schema:
+                type: object
+                properties: {}
