@@ -15,11 +15,13 @@ GEM
       multipart-post (>= 1.2, < 3)
     i18n (1.8.3)
       concurrent-ruby (~> 1.0)
-    mini_portile2 (2.4.0)
+    mini_portile2 (2.8.0)
     minitest (5.14.1)
     multipart-post (2.1.1)
-    nokogiri (1.10.9)
-      mini_portile2 (~> 2.4.0)
+    nokogiri (1.13.9)
+      mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
+    racc (1.6.0)
     thread_safe (0.3.6)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
@@ -33,7 +35,7 @@ DEPENDENCIES
   byebug (~> 11.1)
   faker (~> 2.12)
   faraday (~> 1.0)
-  nokogiri (~> 1.10)
+  nokogiri (~> 1.13)
 
 BUNDLED WITH
    1.17.2
