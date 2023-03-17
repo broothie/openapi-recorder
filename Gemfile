@@ -2,7 +2,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
-gem "activesupport", "~> 6.0"
+gem "activesupport", "~> 6.1"
 gem "faraday", "~> 1.0"
 gem "nokogiri", "~> 1.10"
 gem "faker", "~> 2.12"
